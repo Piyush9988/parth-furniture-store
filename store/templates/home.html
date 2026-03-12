@@ -1,0 +1,109 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Hero Section -->
+<div id="furnitureSlider" class="carousel slide mb-5" data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+<div class="carousel-item active">
+
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc" 
+class="d-block w-100" style="height:500px; object-fit:cover;">
+
+<div class="carousel-caption">
+
+<h2>Luxury Sofa Collection</h2>
+
+<a href="/sofas/" class="btn btn-dark">Shop Sofas</a>
+
+</div>
+
+</div>
+
+
+<div class="carousel-item">
+
+<img src="https://images.unsplash.com/photo-1503602642458-232111445657" 
+class="d-block w-100" style="height:500px; object-fit:cover;">
+
+<div class="carousel-caption">
+
+<h2>Modern Chairs</h2>
+
+<a href="/chairs/" class="btn btn-dark">Shop Chairs</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<button class="carousel-control-prev" type="button" data-bs-target="#furnitureSlider" data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+<button class="carousel-control-next" type="button" data-bs-target="#furnitureSlider" data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+</div>
+
+
+<!-- Categories -->
+<h2 class="text-center mb-4">Shop by Category</h2>
+
+<div class="row">
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc" 
+class="card-img-top" style="height:300px; object-fit:cover;">
+
+<div class="card-body text-center">
+
+<h3>Sofas</h3>
+
+<a href="/sofas/" class="btn btn-primary">
+View Sofas
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<div class="col-md-6">
+
+<div class="card shadow">
+
+<img src="https://images.unsplash.com/photo-1503602642458-232111445657" 
+class="card-img-top" style="height:300px; object-fit:cover;">
+
+<div class="card-body text-center">
+
+<h3>Chairs</h3>
+
+<a href="/chairs/" class="btn btn-primary">
+View Chairs
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

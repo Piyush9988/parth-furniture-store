@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1 class="text-center mb-4">Furniture Products</h1>
+    
+    <a href="/cart/" class="btn btn-success mb-3">
+        View Cart
+    </a>
+
+    <div class="row">
+
+        {% for product in products %}
+
+        <div class="col-md-4">
+
+            <div class="card mb-4 shadow">
+
+                <img src="{{ product.image.url }}" class="card-img-top">
+
+                <div class="card-body">
+
+                    <h5 class="card-title">{{ product.name }}</h5>
+
+                    <p class="card-text">
+                        Category: {{ product.category }}
+                    </p>
+
+                    <p class="card-text">
+                        Price: ₹{{ product.price }}
+                    </p>
+
+                    <p class="card-text">
+                        {{ product.description }}
+                    </p>
+
+                    <a href="{% url 'add_to_cart' product.id %}" class="btn btn-primary">
+                        Add to Cart
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

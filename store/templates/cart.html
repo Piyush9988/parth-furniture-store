@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-success text-center">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
+<h1>Your Shopping Cart</h1>
+
+<table class="table table-bordered">
+
+<tr>
+<th>Product</th>
+<th>Price</th>
+<th>Quantity</th>
+<th>Subtotal</th>
+<th>Action</th>
+</tr>
+
+{% for item in cart_items %}
+
+<tr>
+
+<td>{{ item.product.name }}</td>
+
+<td>₹{{ item.product.price }}</td>
+
+<td>
+
+<a href="{% url 'decrease_quantity' item.id %}" class="btn btn-sm btn-danger">-</a>
+
+<span class="mx-2">{{ item.quantity }}</span>
+
+<a href="{% url 'increase_quantity' item.id %}" class="btn btn-sm btn-success">+</a>
+
+</td>
+
+<td>
+₹{{ item.subtotal }}
+</td>
+
+<td>
+
+<a href="/remove-from-cart/{{ item.id }}/" class="btn btn-danger">
+Remove
+</a>
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<h3>Total Price: ₹{{ total_price }}</h3>
+
+{% if cart_items %}
+<a href="/checkout/" class="btn btn-success">Proceed to Checkout</a>
+{% else %}
+<button class="btn btn-secondary" disabled>Proceed to Checkout</button>
+<p class="text-danger mt-2">⚠️ Your cart is empty. Please add items first.</p>
+{% endif %}
+
+<a href="/products/" class="btn btn-primary">
+Continue Shopping
+</a>
+
+</div>
+
+{% endblock %}
